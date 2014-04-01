@@ -14,14 +14,15 @@
 		0C48CF8818EA779D009FF16A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CF8718EA779D009FF16A /* main.m */; };
 		0C48CF8C18EA779D009FF16A /* SOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CF8B18EA779D009FF16A /* SOSAppDelegate.m */; };
 		0C48CF8F18EA779D009FF16A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48CF8D18EA779D009FF16A /* Main.storyboard */; };
-		0C48CF9218EA779D009FF16A /* SOSFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CF9118EA779D009FF16A /* SOSFirstViewController.m */; };
-		0C48CF9518EA779D009FF16A /* SOSSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CF9418EA779D009FF16A /* SOSSecondViewController.m */; };
 		0C48CF9718EA779D009FF16A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C48CF9618EA779D009FF16A /* Images.xcassets */; };
 		0C48CF9E18EA779D009FF16A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C48CF9D18EA779D009FF16A /* XCTest.framework */; };
 		0C48CF9F18EA779D009FF16A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C48CF7B18EA779D009FF16A /* Foundation.framework */; };
 		0C48CFA018EA779D009FF16A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C48CF7F18EA779D009FF16A /* UIKit.framework */; };
 		0C48CFA818EA779D009FF16A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C48CFA618EA779D009FF16A /* InfoPlist.strings */; };
 		0C48CFAA18EA779D009FF16A /* Students_of_StrengthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CFA918EA779D009FF16A /* Students_of_StrengthTests.m */; };
+		0C48CFB518EA8021009FF16A /* SOSCompletedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CFB418EA8021009FF16A /* SOSCompletedTableViewController.m */; };
+		0C48CFB818EA8057009FF16A /* SOSAppointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CFB718EA8057009FF16A /* SOSAppointment.m */; };
+		0C48CFBB18EA8C33009FF16A /* SOSAppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CFBA18EA8C33009FF16A /* SOSAppointmentTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +47,18 @@
 		0C48CF8A18EA779D009FF16A /* SOSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOSAppDelegate.h; sourceTree = "<group>"; };
 		0C48CF8B18EA779D009FF16A /* SOSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOSAppDelegate.m; sourceTree = "<group>"; };
 		0C48CF8E18EA779D009FF16A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0C48CF9018EA779D009FF16A /* SOSFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOSFirstViewController.h; sourceTree = "<group>"; };
-		0C48CF9118EA779D009FF16A /* SOSFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOSFirstViewController.m; sourceTree = "<group>"; };
-		0C48CF9318EA779D009FF16A /* SOSSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOSSecondViewController.h; sourceTree = "<group>"; };
-		0C48CF9418EA779D009FF16A /* SOSSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOSSecondViewController.m; sourceTree = "<group>"; };
 		0C48CF9618EA779D009FF16A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0C48CF9C18EA779D009FF16A /* Students of StrengthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Students of StrengthTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C48CF9D18EA779D009FF16A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0C48CFA518EA779D009FF16A /* Students of StrengthTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Students of StrengthTests-Info.plist"; sourceTree = "<group>"; };
 		0C48CFA718EA779D009FF16A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C48CFA918EA779D009FF16A /* Students_of_StrengthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Students_of_StrengthTests.m; sourceTree = "<group>"; };
+		0C48CFB318EA8021009FF16A /* SOSCompletedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSCompletedTableViewController.h; sourceTree = "<group>"; };
+		0C48CFB418EA8021009FF16A /* SOSCompletedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSCompletedTableViewController.m; sourceTree = "<group>"; };
+		0C48CFB618EA8057009FF16A /* SOSAppointment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSAppointment.h; sourceTree = "<group>"; };
+		0C48CFB718EA8057009FF16A /* SOSAppointment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSAppointment.m; sourceTree = "<group>"; };
+		0C48CFB918EA8C33009FF16A /* SOSAppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSAppointmentTableViewCell.h; sourceTree = "<group>"; };
+		0C48CFBA18EA8C33009FF16A /* SOSAppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSAppointmentTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +121,14 @@
 				0C48CF8A18EA779D009FF16A /* SOSAppDelegate.h */,
 				0C48CF8B18EA779D009FF16A /* SOSAppDelegate.m */,
 				0C48CF8D18EA779D009FF16A /* Main.storyboard */,
-				0C48CF9018EA779D009FF16A /* SOSFirstViewController.h */,
-				0C48CF9118EA779D009FF16A /* SOSFirstViewController.m */,
-				0C48CF9318EA779D009FF16A /* SOSSecondViewController.h */,
-				0C48CF9418EA779D009FF16A /* SOSSecondViewController.m */,
+				0C48CFB918EA8C33009FF16A /* SOSAppointmentTableViewCell.h */,
+				0C48CFBA18EA8C33009FF16A /* SOSAppointmentTableViewCell.m */,
 				0C48CF9618EA779D009FF16A /* Images.xcassets */,
 				0C48CF8218EA779D009FF16A /* Supporting Files */,
+				0C48CFB318EA8021009FF16A /* SOSCompletedTableViewController.h */,
+				0C48CFB418EA8021009FF16A /* SOSCompletedTableViewController.m */,
+				0C48CFB618EA8057009FF16A /* SOSAppointment.h */,
+				0C48CFB718EA8057009FF16A /* SOSAppointment.m */,
 			);
 			path = "Students of Strength";
 			sourceTree = "<group>";
@@ -255,10 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C48CF9518EA779D009FF16A /* SOSSecondViewController.m in Sources */,
 				0C48CF8C18EA779D009FF16A /* SOSAppDelegate.m in Sources */,
-				0C48CF9218EA779D009FF16A /* SOSFirstViewController.m in Sources */,
+				0C48CFB518EA8021009FF16A /* SOSCompletedTableViewController.m in Sources */,
 				0C48CF8818EA779D009FF16A /* main.m in Sources */,
+				0C48CFB818EA8057009FF16A /* SOSAppointment.m in Sources */,
+				0C48CFBB18EA8C33009FF16A /* SOSAppointmentTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

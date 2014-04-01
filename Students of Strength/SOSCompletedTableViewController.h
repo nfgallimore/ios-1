@@ -1,5 +1,5 @@
 //
-//  SOSFirstViewController.h
+//  SOSCompletedTableViewController.h
 //  Students of Strength
 //
 //  Created by Yasyf Mohamedali on 2014-04-01.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SOSFirstViewController : UIViewController
+@interface SOSCompletedTableViewController : UITableViewController
 
 @end
