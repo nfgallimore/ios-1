@@ -14,6 +14,7 @@
 @interface SOSCompletedTableViewController ()
 
 @property NSMutableArray *appointments;
+@property NSMutableArray *identifiersSeen;
 
 @end
 
@@ -28,19 +29,36 @@
     return self;
 }
 
-- (void)viewDidLoad
+
+- (NSUInteger)reload
 {
-    [super viewDidLoad];
-    
     NSData *json = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://ym-sos-api.herokuapp.com/appointments/completed/52f1de0edabae0c78fe9c713.json?offset=240&start=1396152000&end=1399780800&_=1396327111392"]];
     
     NSArray *items = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingMutableContainers error:nil];
     
-    self.appointments = [[NSMutableArray alloc] init];
+    NSUInteger oldCount = [self.appointments count];
+    
+    NSLog(@"%lu", oldCount);
+    
     for (NSDictionary *obj in items) {
         SOSAppointment *appt = [[SOSAppointment alloc] initWithDictionary:obj];
-        [self.appointments addObject:appt];
+        if (![self.identifiersSeen containsObject:appt.identifier]) {
+            [self.identifiersSeen addObject:appt.identifier];
+            [self.appointments addObject:appt];
+        }
     }
+    
+    return [self.appointments count] - oldCount;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.appointments = [[NSMutableArray alloc] init];
+    self.identifiersSeen = [[NSMutableArray alloc] init];
+    
+    [self reload];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -132,5 +150,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger count = [self reload];
+    [self.tableView reloadData];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data refreshed!" message:[NSString stringWithFormat:@"%lu new entried loaded", (unsigned long)count] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+}
 
 @end

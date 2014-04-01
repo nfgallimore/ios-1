@@ -29,6 +29,7 @@
     self = [super init];
     
     if(self){
+        self.identifier = appointment[@"id"];
         self.title = appointment[@"title"];
         self.coach = appointment[@"coach"];
         self.student = appointment[@"student"];

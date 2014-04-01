@@ -10,6 +10,7 @@
 
 @interface SOSAppointment : NSObject
 
+@property NSString *identifier;
 @property NSString *title;
 //TODO: Model People
 @property NSString *coach;
