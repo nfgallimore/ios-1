@@ -98,8 +98,13 @@
 - (IBAction)studentButtonClick:(id)sender {
     
     self.currentUser = self.appointment.student;
-    [self showActionSheetWithTitle:@"Contact Student"];
+    [self showActionSheetWithTitle:[NSString stringWithFormat:@"Contact %@",self.appointment.student.name]];
     
+}
+
+- (IBAction)coachButtonClick:(id)sender {
+    self.currentUser = self.appointment.coach;
+    [self showActionSheetWithTitle:[NSString stringWithFormat:@"Contact %@",self.appointment.coach.name]];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
