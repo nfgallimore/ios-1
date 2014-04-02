@@ -7,19 +7,27 @@
 //
 
 #import "SOSAppointment.h"
+#import "SOSUser.h"
+
+@interface SOSAppointment ()
+
+@property  NSString *coachid;
+@property NSString *studentid;
+
+@end
 
 @implementation SOSAppointment
 
-+ (NSString *)statusIntToString:(NSNumber *)statusInt
++ (NSString *)statusStringFromNumber:(NSNumber *)statusInt
 {
     return @{@0: @"Cancelled", @1: @"Completed", @2: @"Ongoing", @3: @"Confirmed", @4: @"Pending"}[statusInt];
 }
 
-+ (UIColor *)statusIntToColor:(NSNumber *)statusInt
++ (UIColor *)statusColorFromNumber:(NSNumber *)statusInt
 {
-    UIColor *green = [UIColor greenColor];
-    UIColor *blue = [UIColor blueColor];
-    UIColor *red = [UIColor redColor];
+    UIColor *green = [UIColor colorWithRed:0.298 green:0.545 blue:0.38 alpha:1]; /*#4c8b61*/
+    UIColor *blue = [UIColor colorWithRed:0.169 green:0.482 blue:0.835 alpha:1]; /*#2b7bd5*/
+    UIColor *red = [UIColor colorWithRed:0.682 green:0.067 blue:0.067 alpha:1]; /*#ae1111*/
     
     return @{@0: red, @1: green, @2: blue, @3: green, @4: blue}[statusInt];
 }
@@ -29,11 +37,13 @@
     self = [super init];
     
     if(self){
+        self.studentid = appointment[@"studentid"];
+        self.coachid = appointment[@"coachid"];
+        
         self.identifier = appointment[@"id"];
         self.title = appointment[@"title"];
-        self.coach = appointment[@"coach"];
-        self.student = appointment[@"student"];
         self.status = appointment[@"status"];
+        self.length = appointment[@"length"];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -41,5 +51,11 @@
     }
     
     return self;
+}
+
+- (void)initUsers
+{
+    self.coach = [[SOSUser alloc] initWithUserId:self.coachid];
+    self.student = [[SOSUser alloc] initWithUserId:self.studentid];
 }
 @end

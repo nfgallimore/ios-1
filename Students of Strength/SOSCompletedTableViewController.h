@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Students of Strength. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SOSGenericAppointmentsTableViewController.h"
 
-@interface SOSCompletedTableViewController : UITableViewController
+@interface SOSCompletedTableViewController : SOSGenericAppointmentsTableViewController
 
 @end

@@ -7,20 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SOSUser.h"
 
 @interface SOSAppointment : NSObject
 
 @property NSString *identifier;
 @property NSString *title;
-//TODO: Model People
-@property NSString *coach;
-//TODO: Model People
-@property NSString *student;
+@property SOSUser *coach;
+@property SOSUser *student;
 @property NSDate *start;
 @property NSNumber *status;
+@property NSNumber *length;
 
-+ (NSString *)statusIntToString:(NSNumber *)statusInt;
-+ (UIColor *)statusIntToColor:(NSNumber *)statusInt;
++ (NSString *)statusStringFromNumber:(NSNumber *)statusInt;
++ (UIColor *)statusColorFromNumber:(NSNumber *)statusInt;
 
 - (id)initWithDictionary:(NSDictionary *)appointment;
+- (void)initUsers;
 @end
+
