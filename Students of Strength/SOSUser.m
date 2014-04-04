@@ -7,8 +7,24 @@
 //
 
 #import "SOSUser.h"
+#import "SOSURLUtil.h"
 
 @implementation SOSUser
+
+static NSMutableDictionary *_users;
+
++ (SOSUser *)userWithIdentifier:(NSString *)identifier
+{
+    if (_users == nil) {
+        _users = [[NSMutableDictionary alloc] init];
+    }
+    if ([_users objectForKey:identifier] == nil) {
+        NSLog(@"Fetching user %@",identifier);
+        SOSUser *u = [[SOSUser alloc] initWithIdentifier:identifier];
+       _users[identifier] = u;
+    }
+    return [_users objectForKey: identifier];
+}
 
 - (id)initWithDictionary:(NSDictionary *)user
 {
@@ -32,9 +48,9 @@
     return [self initWithDictionary:items];
 }
 
-- (id)initWithUserId:(NSString *)userId
+- (id)initWithIdentifier:(NSString *)identifier
 {
-    return [self initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.studentsofstrength.com/user/%@.json",userId]]];
+    return [self initWithURL:[SOSURLUtil URLForUserWithIdentifier:identifier]];
 }
 
 @end

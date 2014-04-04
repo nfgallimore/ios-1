@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     if(self.controllers == nil){
-        self.controllers = @{@"Completed": @"completedSegue"};
+        self.controllers = @{@"Confirmed": @"confirmedSegue"};
     }
     
     // Uncomment the following line to preserve selection between presentations.
@@ -87,7 +87,7 @@
 {
     NSString *identifier = [[self.controllers allValues] objectAtIndex:indexPath.row];
     if(identifier){
-        [self performSegueWithIdentifier:identifier sender:self];
+        [self performSegueWithIdentifier:identifier sender:self.view];
     }
 }
 

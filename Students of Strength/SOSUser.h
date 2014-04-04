@@ -16,8 +16,6 @@
 @property NSString *parentEmail;
 @property NSString *skype;
 
-- (id)initWithDictionary:(NSDictionary *)user;
-- (id)initWithURL:(NSURL *)url;
-- (id)initWithUserId:(NSString *)userId;
++ (SOSUser *)userWithIdentifier:(NSString *)identifier;
 
 @end

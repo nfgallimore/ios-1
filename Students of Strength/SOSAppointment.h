@@ -22,7 +22,7 @@
 + (NSString *)statusStringFromNumber:(NSNumber *)statusInt;
 + (UIColor *)statusColorFromNumber:(NSNumber *)statusInt;
 
-- (id)initWithDictionary:(NSDictionary *)appointment;
++ (SOSAppointment *)appointmentWithDictionary:(NSDictionary *)appointment;
 - (void)initUsers;
 @end
 

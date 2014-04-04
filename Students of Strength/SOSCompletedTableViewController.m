@@ -7,6 +7,7 @@
 //
 
 #import "SOSCompletedTableViewController.h"
+#import "SOSURLUtil.h"
 
 @interface SOSCompletedTableViewController ()
 
@@ -17,7 +18,7 @@
 - (void)loadInitialValues
 {
     [super loadInitialValues];
-    self.dataSource = [NSURL URLWithString:@"http://ym-sos-api.herokuapp.com/appointments/completed/52f1de0edabae0c78fe9c713.json?offset=240&start=1396152000&end=1399780800&_=1396327111392"];
+    self.dataSource = [SOSURLUtil URLForCompletedAppointmentsWithIdentifier:[[NSUserDefaults standardUserDefaults] stringForKey:@"identifier"]];
     self.cellPrototype = @"SOSCompletedCellPrototype";
 }
 

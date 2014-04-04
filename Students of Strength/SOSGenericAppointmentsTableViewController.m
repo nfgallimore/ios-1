@@ -55,7 +55,7 @@
     NSArray *items = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingMutableContainers error:nil];
     
     for (NSDictionary *obj in items) {
-        SOSAppointment *appt = [[SOSAppointment alloc] initWithDictionary:obj];
+        SOSAppointment *appt = [SOSAppointment appointmentWithDictionary:obj];
         NSDate *date = [SOSGenericAppointmentsTableViewController dayForDate:appt.start];
         if(self.appointments[date] == nil){
             self.appointments[date] = [NSMutableDictionary dictionary];

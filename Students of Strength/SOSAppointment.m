@@ -18,6 +18,8 @@
 
 @implementation SOSAppointment
 
+static NSMutableDictionary *_appointments;
+
 + (NSString *)statusStringFromNumber:(NSNumber *)statusInt
 {
     return @{@0: @"Cancelled", @1: @"Completed", @2: @"Ongoing", @3: @"Confirmed", @4: @"Pending"}[statusInt];
@@ -30,6 +32,18 @@
     UIColor *red = [UIColor colorWithRed:0.682 green:0.067 blue:0.067 alpha:1]; /*#ae1111*/
     
     return @{@0: red, @1: green, @2: blue, @3: green, @4: blue}[statusInt];
+}
+
++ (SOSAppointment *)appointmentWithDictionary:(NSDictionary *)appointment
+{
+    if (_appointments == nil) {
+        _appointments = [[NSMutableDictionary alloc] init];
+    }
+    if ([_appointments objectForKey:[appointment objectForKey:@"id"]] == nil) {
+        SOSAppointment *a = [[SOSAppointment alloc] initWithDictionary:appointment];
+        _appointments[[appointment objectForKey:@"id"]] = a;
+    }
+    return [_appointments objectForKey:[appointment objectForKey:@"id"]];
 }
 
 - (id)initWithDictionary:(NSDictionary *)appointment
@@ -55,7 +69,7 @@
 
 - (void)initUsers
 {
-    self.coach = [[SOSUser alloc] initWithUserId:self.coachid];
-    self.student = [[SOSUser alloc] initWithUserId:self.studentid];
+    self.coach = [SOSUser userWithIdentifier:self.coachid];
+    self.student = [SOSUser userWithIdentifier:self.studentid];
 }
 @end
