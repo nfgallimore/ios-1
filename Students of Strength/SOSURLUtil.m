@@ -34,4 +34,9 @@ static const NSString *endpoint = @"https://api.studentsofstrength.com";
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@/appointments/completed/%@.json", endpoint, [SOSURLUtil escapeURIComponent:identifier]]];
 }
 
++ (NSURL *)URLForUpcomingAppointmentsWithIdentifier:identifier
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/appointments/upcoming/%@.json", endpoint, [SOSURLUtil escapeURIComponent:identifier]]];
+}
+
 @end

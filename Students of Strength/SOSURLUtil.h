@@ -15,5 +15,6 @@
 + (NSURL *)URLForLoginWithUsername:(NSString *)username password:(NSString *)password;
 + (NSURL *)URLForUserWithIdentifier:(NSString *)identifier;
 + (NSURL *)URLForCompletedAppointmentsWithIdentifier:identifier;
++ (NSURL *)URLForUpcomingAppointmentsWithIdentifier:identifier;
 
 @end

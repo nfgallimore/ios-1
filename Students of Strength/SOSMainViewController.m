@@ -31,9 +31,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] init];
-    NSString *username = [userDefaults stringForKey:@"username"];
-    NSString *password = [userDefaults stringForKey:@"password"];
-    if(username == nil || password == nil){
+    NSString *identifier = [userDefaults stringForKey:@"identifier"];
+    if(identifier == nil){
         [self performSegueWithIdentifier:@"loginSegue" sender:self.view];
     }
 }

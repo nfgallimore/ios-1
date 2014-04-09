@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     if(self.controllers == nil){
-        self.controllers = @{@"Confirmed": @"confirmedSegue"};
+        self.controllers = @{@"Completed": @"completedSegue", @"Upcoming": @"upcomingSegue"};
     }
     
     // Uncomment the following line to preserve selection between presentations.
