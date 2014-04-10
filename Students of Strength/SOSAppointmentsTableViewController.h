@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SOSSyncData.h"
+#import "SOSGenericAppointmentsTableViewController.h"
 
-@interface SOSAppointmentsTableViewController : UITableViewController
+@interface SOSAppointmentsTableViewController : UITableViewController <SOSSyncData>
+
+@property NSDictionary *controllers;
+@property NSNumber *selected;
+@property (weak) SOSGenericAppointmentsTableViewController *current;
 
 @end

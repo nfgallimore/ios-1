@@ -28,6 +28,7 @@
 		0C48CFC518EB5910009FF16A /* SOSGenericAppointmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CFC418EB5910009FF16A /* SOSGenericAppointmentsTableViewController.m */; };
 		0C48CFC818EB8113009FF16A /* SOSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C48CFC718EB8113009FF16A /* SOSUser.m */; };
 		0C8BE6BA18F5F4DC00D1B222 /* SOSUpcomingTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BE6B918F5F4DC00D1B222 /* SOSUpcomingTableViewViewController.m */; };
+		0C8BE6BD18F600DF00D1B222 /* SOSProximitySyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BE6BC18F600DF00D1B222 /* SOSProximitySyncViewController.m */; };
 		0C9D970818EF4101007C6B19 /* SOSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D970718EF4101007C6B19 /* SOSMainViewController.m */; };
 		0C9D970B18EF42B8007C6B19 /* SOSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D970A18EF42B8007C6B19 /* SOSLoginViewController.m */; };
 		0C9D970E18EF4568007C6B19 /* SOSURLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D970D18EF4568007C6B19 /* SOSURLUtil.m */; };
@@ -76,6 +77,10 @@
 		0C48CFC718EB8113009FF16A /* SOSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSUser.m; sourceTree = "<group>"; };
 		0C8BE6B818F5F4DC00D1B222 /* SOSUpcomingTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSUpcomingTableViewViewController.h; sourceTree = "<group>"; };
 		0C8BE6B918F5F4DC00D1B222 /* SOSUpcomingTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSUpcomingTableViewViewController.m; sourceTree = "<group>"; };
+		0C8BE6BB18F600DF00D1B222 /* SOSProximitySyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSProximitySyncViewController.h; sourceTree = "<group>"; };
+		0C8BE6BC18F600DF00D1B222 /* SOSProximitySyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSProximitySyncViewController.m; sourceTree = "<group>"; };
+		0C8BE6BE18F613DC00D1B222 /* SOSSyncSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOSSyncSource.h; sourceTree = "<group>"; };
+		0C8BE6BF18F6201B00D1B222 /* SOSSyncData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOSSyncData.h; sourceTree = "<group>"; };
 		0C9D970618EF4101007C6B19 /* SOSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSMainViewController.h; sourceTree = "<group>"; };
 		0C9D970718EF4101007C6B19 /* SOSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSMainViewController.m; sourceTree = "<group>"; };
 		0C9D970918EF42B8007C6B19 /* SOSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSLoginViewController.h; sourceTree = "<group>"; };
@@ -156,6 +161,8 @@
 				0C48CFC418EB5910009FF16A /* SOSGenericAppointmentsTableViewController.m */,
 				0C48CFBC18EB522A009FF16A /* SOSAppointmentsTableViewController.h */,
 				0C48CFBD18EB522A009FF16A /* SOSAppointmentsTableViewController.m */,
+				0C8BE6BF18F6201B00D1B222 /* SOSSyncData.h */,
+				0C8BE6BE18F613DC00D1B222 /* SOSSyncSource.h */,
 				0C48CF8B18EA779D009FF16A /* SOSAppDelegate.m */,
 				0C48CF8D18EA779D009FF16A /* Main.storyboard */,
 				0C9D970918EF42B8007C6B19 /* SOSLoginViewController.h */,
@@ -164,6 +171,8 @@
 				0C9D970D18EF4568007C6B19 /* SOSURLUtil.m */,
 				0C9D970618EF4101007C6B19 /* SOSMainViewController.h */,
 				0C9D970718EF4101007C6B19 /* SOSMainViewController.m */,
+				0C8BE6BB18F600DF00D1B222 /* SOSProximitySyncViewController.h */,
+				0C8BE6BC18F600DF00D1B222 /* SOSProximitySyncViewController.m */,
 				0C48CFC018EB5757009FF16A /* SOSAppointmentViewController.h */,
 				0C48CFC118EB5757009FF16A /* SOSAppointmentViewController.m */,
 				0C48CF9618EA779D009FF16A /* Images.xcassets */,
@@ -303,6 +312,7 @@
 				0C48CFC818EB8113009FF16A /* SOSUser.m in Sources */,
 				0C9D970E18EF4568007C6B19 /* SOSURLUtil.m in Sources */,
 				0C9D970818EF4101007C6B19 /* SOSMainViewController.m in Sources */,
+				0C8BE6BD18F600DF00D1B222 /* SOSProximitySyncViewController.m in Sources */,
 				0C48CFC218EB5757009FF16A /* SOSAppointmentViewController.m in Sources */,
 				0C48CF8C18EA779D009FF16A /* SOSAppDelegate.m in Sources */,
 				0C48CFB518EA8021009FF16A /* SOSCompletedTableViewController.m in Sources */,

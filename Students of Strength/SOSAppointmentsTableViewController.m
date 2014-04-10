@@ -7,10 +7,10 @@
 //
 
 #import "SOSAppointmentsTableViewController.h"
+#import "SOSSyncSource.h"
+#import "SOSGenericAppointmentsTableViewController.h"
 
 @interface SOSAppointmentsTableViewController ()
-
-@property NSDictionary *controllers;
 
 @end
 
@@ -70,22 +70,27 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    SOSGenericAppointmentsTableViewController *destination = segue.destinationViewController;
+    self.current = destination;
+    if ([sender respondsToSelector:@selector(minor)]) {
+        id<SOSSyncSource> source = sender;
+        destination.minor = source.minor;
+    }
 }
-*/
+
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = [[self.controllers allValues] objectAtIndex:indexPath.row];
+    self.selected = [NSNumber numberWithLong:indexPath.row];
     if(identifier){
         [self performSegueWithIdentifier:identifier sender:self.view];
     }

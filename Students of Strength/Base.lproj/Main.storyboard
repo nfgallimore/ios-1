@@ -17,11 +17,12 @@
                     <connections>
                         <segue destination="7b0-so-Tc2" kind="relationship" relationship="viewControllers" id="v9J-1o-MX8"/>
                         <segue destination="cZf-su-EZf" kind="modal" identifier="loginSegue" id="yXF-Cs-WcY"/>
+                        <segue destination="OZz-FM-NCU" kind="relationship" relationship="viewControllers" id="N3u-mH-yEI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="198"/>
+            <point key="canvasLocation" x="-894" y="306"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="2gs-29-WUd">
@@ -97,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQU-dy-Ebt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="-550"/>
+            <point key="canvasLocation" x="-588" y="-1262"/>
         </scene>
         <!--Completed Table View Controller - Completed-->
         <scene sceneID="joy-EM-VTm">
@@ -132,7 +133,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="D1l-RH-aZi" kind="push" identifier="completedAppointmentViewSegue" id="Al9-Y9-3W0"/>
+                                    <segue destination="D1l-RH-aZi" kind="push" identifier="appointmentViewSegue" id="Al9-Y9-3W0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -146,7 +147,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCT-9d-06s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="-270"/>
+            <point key="canvasLocation" x="1022" y="-598"/>
         </scene>
         <!--Appointment View Controller - Appointment-->
         <scene sceneID="JAo-3f-WBx">
@@ -261,7 +262,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPB-Az-wwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="23"/>
+            <point key="canvasLocation" x="2085" y="-609"/>
+        </scene>
+        <!--Proximity Sync View Controller - Sync-->
+        <scene sceneID="dcB-KT-Qbt">
+            <objects>
+                <viewController id="OZz-FM-NCU" customClass="SOSProximitySyncViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qzY-Mc-lKt"/>
+                        <viewControllerLayoutGuide type="bottom" id="t1V-8b-QaR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hrC-bd-quE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sync" id="im4-FQ-ERb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cs-ZM-KSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="1971"/>
         </scene>
         <!--Navigation Controller - Appointments-->
         <scene sceneID="97k-yF-2UW">
@@ -280,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P29-UA-tQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="188"/>
+            <point key="canvasLocation" x="238" y="1080"/>
         </scene>
         <!--Appointments Table View Controller - Appointments-->
         <scene sceneID="BZr-zD-1Zl">
@@ -323,7 +343,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDK-68-52D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021" y="238"/>
+            <point key="canvasLocation" x="729" y="1086"/>
         </scene>
         <!--Upcoming Table View View Controller - Completed-->
         <scene sceneID="mFE-QF-K4a">
@@ -357,6 +377,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="D1l-RH-aZi" kind="push" identifier="appointmentViewSegue" id="4jQ-V7-hWG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -369,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8v-IW-3xO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="-536"/>
+            <point key="canvasLocation" x="446" y="-622"/>
         </scene>
     </scenes>
     <resources>
@@ -380,4 +403,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Al9-Y9-3W0"/>
+    </inferredMetricsTieBreakers>
 </document>

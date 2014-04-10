@@ -83,6 +83,28 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.minor != nil) {
+        long count = 0;
+        for (int i = 0; i < [self.sections count]; i++) {
+            long add = [self.appointments[self.sections[i]] count];
+            if (count + add < [self.minor intValue]) {
+                count += add;
+            }
+            else{
+                break;
+            }
+        }
+        NSInteger section = count / [self.sections count];
+        NSInteger row = [self.minor intValue] - count;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] animated:YES scrollPosition:UITableViewScrollPositionTop];
+        self.minor = nil;
+        [self performSegueWithIdentifier:@"appointmentViewSegue" sender:self];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -131,6 +153,12 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
  {
      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+     long count = 0;
+     for (int i = 0; (i+1) < indexPath.section; i++) {
+         count += [self.appointments[self.sections[i]] count];
+     }
+     self.selected = [NSNumber numberWithLong:(count + indexPath.row)];
+     
      NSDate *date = self.sections[indexPath.section];
      SOSAppointmentViewController *destination = [segue destinationViewController];
      SOSAppointment *appointment = [[self.appointments[date] allValues] objectAtIndex:indexPath.row];

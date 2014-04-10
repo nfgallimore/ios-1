@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SOSSyncSource.h"
+#import "SOSSyncData.h"
 
-@interface SOSGenericAppointmentsTableViewController : UITableViewController
+@interface SOSGenericAppointmentsTableViewController : UITableViewController <SOSSyncSource, SOSSyncData>
 
 - (void)loadInitialValues;
 
 @property NSURL *dataSource;
 @property NSString *cellPrototype;
+@property NSNumber *minor;
+@property NSNumber *selected;
 
 @end
